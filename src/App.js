@@ -68,7 +68,7 @@ function App() {
         <meta name="description" content="App Description" />
         <meta name="theme-color" content="#008f68" />
       </Helmet>
-      <div className='block sm:pt-20 md:pt-24 px-4 w-screen h-screen bg-gray-100'>
+      <div className='block sm:py-20 md:pt-24 px-4 w-screen h-screen bg-gray-100'>
         <Greet />
         <Time />
         <Date />
