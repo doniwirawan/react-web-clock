@@ -7,6 +7,7 @@ import Date from './Components/Date'
 import Quote from './Components/Quote'
 import Joke from './Components/Joke'
 import Greet from './Components/Greet'
+import Note from './Components/Note'
 
 function App() {
   const [quote, setQuote] = useState([])
@@ -66,9 +67,10 @@ function App() {
       <Time/>
       <Date/>
       {element == 'quote' ? <Quote text={quote} char={character} /> : <Joke text={joke}/>  }
+      <Note/>
       
 
-      {element == 'quote' ? <button className='bg-sky-500 py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-sky-500 py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Jokes</button>}
+      {element == 'quote' ? <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Jokes</button>}
 
 
       {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToQuote}>Change to Quote</button>}
