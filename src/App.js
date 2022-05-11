@@ -24,6 +24,14 @@ function App() {
 
   }, [])
 
+  useEffect(() => {
+    axios.get('http://api.icndb.com/jokes/random')
+      .then((res) => {
+        console.log(res.data)
+        setJoke(res.data.value.joke)
+      })
+  }, [])
+
   const generateQuote = () => {
     setElement('quote')
     axios.get('https://animechan.vercel.app/api/random')
