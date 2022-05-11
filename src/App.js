@@ -49,10 +49,10 @@ function App() {
       {element == 'quote' ? <Quote text={quote} char={character} /> : <Joke text={joke}/>  }
       
 
-      {element == 'quote' ? <button className='bg-sky-500 py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700' onClick={generateQuote}>Change Quote</button> : <button className='bg-sky-500 py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700' onClick={generateJoke}>Change Jokes</button>}
+      {element == 'quote' ? <button className='bg-sky-500 py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-sky-500 py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Jokes</button>}
 
 
-      {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1' onClick={changeToQuote}>Change to Quote</button>}
+      {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToQuote}>Change to Quote</button>}
 
     </div>
   );

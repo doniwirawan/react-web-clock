@@ -10,7 +10,7 @@ const Date = () => {
 
   return (
     <div>
-          <h2 className="my-4 text-md text-center font-semibold">{date}</h2>
+          <h2 className="my-4 text-md text-center font-light">{date}</h2>
     </div>
   )
 }
