@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const Joke = (props) => {
     const [joke, setJoke] = useState(props.text)
-    
+
     useEffect(() => {
         axios.get('http://api.icndb.com/jokes/random')
             .then((res) => {
@@ -14,7 +14,7 @@ const Joke = (props) => {
 
     return (
         <>
-            <h2 className="my-4  text-xl text-center font-semibold">{joke}</h2>
+            <h2 className="my-4  text-xl text-center font-normal">{joke}</h2>
         </>
     )
 }
