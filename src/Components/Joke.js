@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Joke = () => {
-    const [joke, setJoke] = useState([])
+const Joke = (props) => {
+    const [joke, setJoke] = useState(props.text)
     useEffect(() => {
         axios.get('http://api.icndb.com/jokes/random')
             .then((res) => {
