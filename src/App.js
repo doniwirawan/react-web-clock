@@ -14,6 +14,16 @@ function App() {
   const [character, setCharacter] = useState([])
   const [element, setElement] = useState('quote')
 
+  useEffect(() => {
+    axios.get('https://animechan.vercel.app/api/random')
+      .then((res) => {
+        console.log(res.data)
+        setQuote(res.data.quote)
+        setCharacter(res.data.character)
+      })
+
+  }, [])
+
   const generateQuote = () => {
     setElement('quote')
     axios.get('https://animechan.vercel.app/api/random')
@@ -33,6 +43,7 @@ function App() {
       })
 
   }
+
   const changeToJoke = () => {
     setElement('joke')
   }
