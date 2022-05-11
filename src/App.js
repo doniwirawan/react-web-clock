@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import { Helmet, HelmetData, HelmetProvider } from 'react-helmet-async';
 
 import Time from './Components/Time'
 import Date from './Components/Date'
@@ -62,20 +62,27 @@ function App() {
 
 
   return (
-    <div className='block mt-24 px-4'>
-      <Greet/>
-      <Time/>
-      <Date/>
-      {element == 'quote' ? <Quote text={quote} char={character} /> : <Joke text={joke}/>  }
-      <Note/>
-      
+    <HelmetProvider>
+      <Helmet>
+        <title>Weblock - Doni Wirawan</title>
+        <meta name="description" content="App Description" />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
+      <div className='block mt-24 px-4'>
+        <Greet />
+        <Time />
+        <Date />
+        {element == 'quote' ? <Quote text={quote} char={character} /> : <Joke text={joke} />}
+        <Note />
 
-      {element == 'quote' ? <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Jokes</button>}
+
+        {element == 'quote' ? <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Jokes</button>}
 
 
-      {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToQuote}>Change to Quote</button>}
+        {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToQuote}>Change to Quote</button>}
 
-    </div>
+      </div>
+    </HelmetProvider>
   );
 }
 
