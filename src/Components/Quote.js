@@ -17,7 +17,7 @@ const Quote = (props) => {
   return (
       <div className="w-9/12 mx-auto">
           <h2 className="text-xl text-center font-normal">{props.text? `"${props.text}"`:''}</h2>
-          <h2 className="text-xl text-center font-semibold">{props.char? `-${props.char}`:''}</h2>
+          <h2 className="text-md mt-2 text-center font-semibold">{props.char? `-${props.char}`:''}</h2>
       </div>
   )
 }
