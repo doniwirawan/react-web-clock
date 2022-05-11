@@ -11,9 +11,7 @@ const Quote = (props) => {
                     setQuote(res.data.quote)
                     setCharacter(res.data.character)
                 })
-                // .catch(err){
-                //     console.log(err)
-                // }
+                
         }, [])
 
   return (

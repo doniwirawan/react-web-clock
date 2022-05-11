@@ -52,7 +52,7 @@ function App() {
       {element == 'quote' ? <button className='bg-sky-500 py-4 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700' onClick={generateQuote}>Change Quote</button> : <button className='bg-sky-500 py-4 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700' onClick={generateJoke}>Change Jokes</button>}
 
 
-      {element == 'quote' ? <button className=' py-4 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1' onClick={changeToJoke}>Change to joke</button> : <button className=' py-4 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1' onClick={changeToQuote}>Change to Quote</button>}
+      {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1' onClick={changeToQuote}>Change to Quote</button>}
 
     </div>
   );
