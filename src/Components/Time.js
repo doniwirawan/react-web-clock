@@ -11,7 +11,7 @@ const Time = () => {
 
   return (
     <div>
-      <h2 className="sm:text-8xl md:text-9xl text-center font-bold">{clock}</h2> 
+      <h2 className="text-8xl text-center font-bold">{clock}</h2> 
     </div>
   )
 }
