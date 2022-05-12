@@ -7,7 +7,6 @@ const Joke = (props) => {
     useEffect(() => {
         axios.get('http://api.icndb.com/jokes/random')
             .then((res) => {
-                console.log(res.data)
                 setJoke(res.data.value.joke)
             })
     }, [])

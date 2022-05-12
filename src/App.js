@@ -10,15 +10,14 @@ import Greet from './Components/Greet'
 import Note from './Components/Note'
 
 function App() {
-  const [quote, setQuote] = useState([])
-  const [joke, setJoke] = useState([])
-  const [character, setCharacter] = useState([])
+  const [quote, setQuote] = useState()
+  const [joke, setJoke] = useState()
+  const [character, setCharacter] = useState()
   const [element, setElement] = useState('quote')
 
   useEffect(() => {
     axios.get('https://animechan.vercel.app/api/random')
       .then((res) => {
-        console.log(res.data)
         setQuote(res.data.quote)
         setCharacter(res.data.character)
       })
@@ -28,7 +27,6 @@ function App() {
   useEffect(() => {
     axios.get('http://api.icndb.com/jokes/random')
       .then((res) => {
-        console.log(res.data)
         setJoke(res.data.value.joke)
       })
   }, [])
@@ -37,7 +35,6 @@ function App() {
     setElement('quote')
     axios.get('https://animechan.vercel.app/api/random')
       .then((res) => {
-        console.log(res.data)
         setQuote(res.data.quote)
         setCharacter(res.data.character)
       })
@@ -47,7 +44,7 @@ function App() {
     setElement('joke')
     axios.get('http://api.icndb.com/jokes/random')
       .then((res) => {
-        console.log(res.data)
+        console.log(joke)
         setJoke(res.data.value.joke)
       })
 
