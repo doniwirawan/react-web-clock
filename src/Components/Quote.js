@@ -6,11 +6,11 @@ const Quote = (props) => {
     const [character, setCharacter] = useState(props.char)
 
     useEffect(() => {
-            axios.get('https://animechan.vercel.app/api/random')
-                .then((res) => {
-                    setQuote(res.data.quote)
-                    setCharacter(res.data.character)
-                })
+         axios.get('https://animechan.vercel.app/api/random')
+            .then((res) => {
+                setQuote(res.data.quote)
+                setCharacter(res.data.character)
+            })
                 
     }, [])
 
