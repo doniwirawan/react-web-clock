@@ -15,22 +15,6 @@ function App() {
   const [character, setCharacter] = useState()
   const [element, setElement] = useState('quote')
 
-  useEffect(() => {
-    axios.get('https://animechan.vercel.app/api/random')
-      .then((res) => {
-        setQuote(res.data.quote)
-        setCharacter(res.data.character)
-      })
-
-  }, [])
-
-  useEffect(() => {
-    axios.get('http://api.icndb.com/jokes/random')
-      .then((res) => {
-        setJoke(res.data.value.joke)
-      })
-  }, [])
-
   const generateQuote = () => {
     setElement('quote')
     axios.get('https://animechan.vercel.app/api/random')
@@ -38,8 +22,8 @@ function App() {
         setQuote(res.data.quote)
         setCharacter(res.data.character)
       })
-
   }
+
   const generateJoke = () => {
     setElement('joke')
     axios.get('http://api.icndb.com/jokes/random')
@@ -47,15 +31,15 @@ function App() {
         console.log(joke)
         setJoke(res.data.value.joke)
       })
-
   }
 
-  const changeToJoke = () => {
-    setElement('joke')
-  }
-  const changeToQuote = () => {
-    setElement('quote')
-  }
+  useEffect(() => {
+      generateQuote()
+  }, [])
+
+  useEffect(() => {
+    generateJoke()
+  }, [])
 
 
   return (
@@ -73,10 +57,10 @@ function App() {
         <Note />
 
 
-        {element == 'quote' ? <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Jokes</button>}
+        {element == 'quote' ? <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700  font-semibold' onClick={generateQuote}>Change Quote</button> : <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ease-in-out hover:ease-in py-3 px-8  text-center m-auto block mt-5 text-gray-100 hover:text-gray-200 rounded-full hover:bg-sky-700 font-semibold' onClick={generateJoke}>Change Joke</button>}
 
 
-        {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={changeToQuote}>Change to Quote</button>}
+        {element == 'quote' ? <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={generateJoke}>Change to joke</button> : <button className=' py-1 px-8  text-center m-auto block mt-5 text-gray-800 underline underline-offset-1 font-extralight font-xs' onClick={generateQuote}>Change to Quote</button>}
 
       </div>
     </HelmetProvider>
