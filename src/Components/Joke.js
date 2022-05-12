@@ -5,9 +5,9 @@ const Joke = (props) => {
     const [joke, setJoke] = useState(props.text)
 
     useEffect(() => {
-        axios.get('http://api.icndb.com/jokes/random')
+        axios.get('https://geek-jokes.sameerkumar.website/api?format=json')
             .then((res) => {
-                setJoke(res.data.value.joke)
+                setJoke(res.data.joke)
             })
     }, [])
 
