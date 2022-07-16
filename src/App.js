@@ -13,7 +13,7 @@ function App() {
   const [quote, setQuote] = useState()
   const [joke, setJoke] = useState()
   const [character, setCharacter] = useState()
-  const [element, setElement] = useState('quote')
+  const [element, setElement] = useState('joke')
 
   const generateQuote = () => {
     setElement('quote')
@@ -34,9 +34,10 @@ function App() {
   }
 
   useEffect(() => {
-      generateQuote()
-      generateJoke()
+    generateQuote()
+    generateJoke()
   }, [])
+
 
   return (
     <HelmetProvider>

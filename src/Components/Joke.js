@@ -4,12 +4,12 @@ import axios from 'axios'
 const Joke = (props) => {
     const [joke, setJoke] = useState(props.text)
 
-    useEffect(() => {
-        axios.get('https://geek-jokes.sameerkumar.website/api?format=json')
-            .then((res) => {
-                setJoke(res.data.joke)
-            })
-    }, [])
+    // useEffect(() => {
+    //     axios.get('https://geek-jokes.sameerkumar.website/api?format=json')
+    //         .then((res) => {
+    //             setJoke(res.data.joke)
+    //         })
+    // }, [])
 
     return (
         <>
