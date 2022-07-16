@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
@@ -15,7 +15,7 @@ function App() {
   const [character, setCharacter] = useState()
   const [element, setElement] = useState('joke')
 
-  const generateQuote = () => {
+  const generateQuote = useCallback(() => {
     setElement('quote')
     if (!quote) {
       axios.get('https://animechan.vercel.app/api/random')
@@ -24,9 +24,9 @@ function App() {
           setCharacter(res.data.character)
         })
     }
-  }
+  })
 
-  const generateJoke = () => {
+  const generateJoke = useCallback(() => {
     setElement('joke')
     if (!joke) {
       axios.get('https://geek-jokes.sameerkumar.website/api?format=json')
@@ -34,7 +34,7 @@ function App() {
           setJoke(res.data.joke)
         })
     }
-  }
+  })
 
   useEffect(() => {
     generateQuote()
