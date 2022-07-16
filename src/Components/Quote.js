@@ -5,14 +5,20 @@ const Quote = (props) => {
     const [quote, setQuote] = useState(props.text)
     const [character, setCharacter] = useState(props.char)
 
-    // useEffect(() => {
-    //     axios.get('https://animechan.vercel.app/api/random')
-    //         .then((res) => {
-    //             setQuote(res.data.quote)
-    //             setCharacter(res.data.character)
-    //         })
 
-    // }, [])
+    useEffect(() => {
+        if (!quote) {
+            axios.get('https://animechan.vercel.app/api/random')
+                .then((res) => {
+                    setQuote(res.data.quote)
+                    setCharacter(res.data.character)
+                })
+        }
+
+
+    }, [])
+
+
 
     return (
         <div className="w-9/12 mx-auto">
