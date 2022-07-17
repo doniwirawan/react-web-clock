@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as dayjs from 'dayjs'
 
-
 const Greet = () => {
     const [greet, setGreet] = useState(dayjs().format('HH'))
     if (greet < 12 && greet > 6) {
@@ -24,9 +23,6 @@ const Greet = () => {
             </div>
         )
     }
-
-
-
 }
 
 export default Greet

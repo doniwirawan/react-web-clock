@@ -11,9 +11,7 @@ const Joke = (props) => {
                     setJoke(res.data.joke)
                 })
         }
-
     }, [])
-
 
     return (
         <>

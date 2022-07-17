@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as dayjs from 'dayjs'
 
-
 const Date = () => {
   const [date, setDate] = useState(dayjs().format('DD-MM-YYYY'))
   setInterval(() => {

@@ -17,23 +17,29 @@ function App() {
 
   const generateQuote = useCallback(() => {
     setElement('quote')
-    if (!quote) {
-      axios.get('https://animechan.vercel.app/api/random')
-        .then((res) => {
-          setQuote(res.data.quote)
-          setCharacter(res.data.character)
-        })
-    }
+    // if (!quote) {
+    //   axios.get('https://animechan.vercel.app/api/random')
+    //     .then((res) => {
+    //       setQuote(res.data.quote)
+    //       setCharacter(res.data.character)
+    //     })
+    // }
+    return (
+      <Quote />
+    )
   })
 
   const generateJoke = useCallback(() => {
     setElement('joke')
-    if (!joke) {
-      axios.get('https://geek-jokes.sameerkumar.website/api?format=json')
-        .then((res) => {
-          setJoke(res.data.joke)
-        })
-    }
+    // if (!joke) {
+    //   axios.get('https://geek-jokes.sameerkumar.website/api?format=json')
+    //     .then((res) => {
+    //       setJoke(res.data.joke)
+    //     })
+    // }
+    return (
+      <Joke />
+    )
   })
 
   useEffect(() => {

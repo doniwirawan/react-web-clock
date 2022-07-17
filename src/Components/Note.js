@@ -27,7 +27,6 @@ const Note = () => {
         setButton(false)
     }
 
-
     return (
         <div className='sm:py-0 md:py-8' onMouseLeave={buttonShow} onMouseOver={buttonDissappear}>
             <form onSubmit={handleSubmit} className='flex sm:w-full md:w-2/5 h-13 m-auto '>

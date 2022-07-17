@@ -5,7 +5,6 @@ const Quote = (props) => {
     const [quote, setQuote] = useState(props.text)
     const [character, setCharacter] = useState(props.char)
 
-
     useEffect(() => {
         if (!quote) {
             axios.get('https://animechan.vercel.app/api/random')
@@ -14,11 +13,7 @@ const Quote = (props) => {
                     setCharacter(res.data.character)
                 })
         }
-
-
     }, [])
-
-
 
     return (
         <div className="w-9/12 mx-auto">
